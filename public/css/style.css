@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+body{
+    background: lightgray;
+}
+/*-----------------header-------------------*/
+#header{
+    width:100%;
+    height:160px;
+    border-bottom :5px solid aliceblue;
+}
+#header h1{
+    font-size:50px;
+    line-height:160px;
+    text-align: center;
+    color:#f19483;
+    word-spacing:40px;
+    text-shadow: 4px 4px 4px #b9887d;
+}
+/*---------------------section--------------------------*/
+#section{
+    width:1200px;
+    margin:50px auto 50px;
+}
+#section .left{
+    float:left;
+    width:200px;
+    font-size:16px;
+    line-height:20px;
+    text-align:center;
+    background: aliceblue;
+    border-radius:20px;
+    padding:10px;
+}
+#section .left ul li{
+    color:lightslategrey;
+}
+#section .middle{
+    float:left;
+    width:600px;
+    margin-left:50px;
+}
+#section .middle .t2{
+    font-size:30px;
+    text-align: center;
+}
+#section .middle .article,.page{
+    width:600px;
+    background: aliceblue;
+    border-radius:20px;
+    padding:20px;
+    margin-top:10px;
+}
+#section .middle .article h2{
+    text-align: center;
+}
+#section .middle .article p.colDefault{
+    color:lightslategray;
+    font-size:10px;
+    text-align: right;
+}
+#section .middle .article p.content{
+    text-indent:2em;
+}
+#section .middle .page{
+    text-align: center;
+}
+#section .middle .page .next{
+    text-align:right;
+}
+#section .right{
+    float:left;
+    width:260px;
+    //height:260px;
+    margin-left:50px;
+    background: aliceblue;
+    border-radius:20px;
+    padding:20px;
+    font-size:14px;
+}
+#section .right .t1{
+    font-size:20px;
+    color:lightslategrey;
+}
+#section .right form .line{
+    margin-bottom:5px;
+}
+#section .right form div span{
+    width: 80px;
+    display: inline-block;
+    text-align: right;
+}
+#section .right form input{
+    width:120px;
+    height:25px;
+}
+#section .right form button{
+    width:120px;
+    height:30px;
+    margin-left:80px;
+    background: orange;
+    color:lightgoldenrodyellow;
+}
+#section .right form p{
+    margin-left:20%;
+}
+#section .right .username{
+    font-size:18px;
+    color:chocolate;
+}
+#section .right .user .admin{
+    color:lightsalmon;
+}
+#section .right .colWarning{
+    color: lightsalmon;
+    font-size:12px;
+    text-align:center;
+}
+
+/*-------------------footer-----------------------*/
+#footer{
+    position: absolute;
+    background: #554236;
+    margin-bottom:0;
+    width:100%;
+    height:50px;
+}
+#footer div{
+    font-size:14px;
+    line-height:50px;
+    text-align: center;
+    color: #ffffff;
+}

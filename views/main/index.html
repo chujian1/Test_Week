@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test_week</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/public/css/bootstrap-theme.min.css" type="text/css"/>
+    <link href="/public/css/my.css" rel="stylesheet" type="text/css"/>
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="/public/js/jquery-1.12.4.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/index.js"></script>
+</head>
+<body>
+<header id="header">
+    <h1>周 测</h1>
+</header>
+<section id="section" class="clearfix">
+    <aside class="left">
+        <ul>
+            {%for content in contents%}
+            <li>{{content.title}}</li>
+            {%endfor%}
+        </ul>
+    </aside>
+    <div class="middle">
+        {%for content in contents%}
+        <div class="article">
+            <h2 id={{content._id}}>{{content.title}}</h2>
+            <p class="colDefault">
+                时间：<span class="colInfo">{{content.addTime | date('Y-m-d')}}</span>
+                阅读量：<span class="colInfo">{{content.views}}</span>
+            </p>
+            <p class="content">{{content.content}}</p>
+        </div>
+        {%endfor%}
+        <div class="page">
+            {%if page <= 1%}
+            <span>没有上一页了 </span>
+            {%else%}
+            <a href="/?page={{page-1}}" class="previous">上一页 </a>
+            {%endif%}
+            <strong> {{page}}/{{pages}} </strong>
+            {%if page >= pages%}
+            <span> 没有下一页了</span>
+            {%else%}
+            <a href="/?page={{page+1}}" class="next"> 下一页</a>
+            {%endif%}
+        </div>
+    </div>
+    <aside class="right">
+        {%if userInfo._id%}
+        <div class="user">
+            <div class="t1 line">用户信息</div>
+            <div class="line username">Hello {{userInfo.username}}</div>
+            {%if userInfo.isAdmin%}
+            <div class="line"><a href="/admin" class="admin">你可以点击这里进入管理界面</a></div>
+            {%endif%}
+            <div><a href="javascript:;" id="logout">退出</a> </div>
+        </div>
+        {%else%}
+        <div id="login">
+            <form action="javascript:;">
+                <div class="t1 line">登录</div>
+                <div class="line"><span>用户名：</span><input name="username" type="text"/></div>
+                <div class="line"><span>密码：</span><input name="password" type="password"/></div>
+                <button type="submit" class="line">登录</button>
+                <p class="line">还没有账号？<a href="javascript:;" class="colMint"> 立即注册</a></p>
+                <p class="colWarning"></p>
+            </form>
+        </div>
+        <div id="register"  style="display:none;">
+            <form action="javascript:;">
+                <div class="t1 line">注册</div>
+                <div class="line"><span>用户名：</span><input name="username" type="text"/></div>
+                <div class="line"><span>密码：</span><input name="password" type="password"/></div>
+                <div class="line"><span>密码确认：</span><input name="repassword" type="password"/></div>
+                <button type="submit" class="line">注册</button>
+                <p class="line">已有账号？<a href="javascript:;" class="colMint"> 立即登录</a></p>
+                <p class="colWarning"></p>
+            </form>
+        </div>
+        {%endif%}
+    </aside>
+</section>
+<footer id="footer">
+    <div>Copyright@版权所有-ypj</div>
+</footer>
+
+</body>
+</html>
